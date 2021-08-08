@@ -24,6 +24,11 @@ int main()
 
   //std::array<int, sz> data1;        // error! same problem
 
+  // sz =10;
+  // constexpr auto arraysize1 = sz;   // error! sz's value is not const
+
+  // std::array<int, sz> data1;        // error! same problem
+
   constexpr auto arraySize2 = 10;     // fine, 10 is a
                                       // compile-time constant
 

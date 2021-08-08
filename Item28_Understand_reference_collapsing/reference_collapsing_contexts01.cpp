@@ -25,4 +25,6 @@ int main()
     auto&& w1 = w;
 
     auto&& w2 = widgetFactory();
+
+    // int& & x = 1; //error
 }

@@ -32,3 +32,10 @@ int main()
        { return func(normalize(std::forward<decltype(params)>(params)...)); };
   }
 }
+
+// c++14， std::forward implm
+template<typename T>
+T&& forward(remove_reference_t<T>& param)
+{
+  return static_cast<T&&>(param);
+}

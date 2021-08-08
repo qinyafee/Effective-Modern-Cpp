@@ -37,7 +37,7 @@ int main()
   f(NULL);     // also fine, also passes null pointer
   f(nullptr);
 
-  //fwd(0);      // error!
-  //fwd(NULL);   // also error!
+  // fwd(0);      // error!
+  // fwd(NULL);   // also error!
   fwd(nullptr);
 }

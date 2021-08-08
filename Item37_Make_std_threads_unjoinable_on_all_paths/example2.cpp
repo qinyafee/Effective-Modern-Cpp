@@ -1,3 +1,8 @@
+#include <functional>
+#include <iostream>
+#include <thread>
+#include <vector>
+
 #include "ThreadRAII.h"
 #include "utils.h"
 

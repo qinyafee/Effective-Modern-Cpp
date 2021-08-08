@@ -20,6 +20,9 @@
 template<typename T>
 void f(T param) {}          // param is now passed by value
 
+template<typename T>
+void cf(const T param) {}          // param is now passed by value
+
 int main()
 {
   int x = 27;               // as before
@@ -30,7 +33,7 @@ int main()
   f(cx);                    // T's and param's types are again both int
 
   f(rx);                    // T's and param's types are still both int
-
+  cf(rx);
 
   const char* const ptr =   // ptr is const pointer to const object
     "Fun with pointers";

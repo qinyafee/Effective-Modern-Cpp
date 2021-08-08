@@ -31,7 +31,7 @@ int main()
   f({1, 2, 3});  // fine, "{1, 2, 3}" implicitly
                  // converted to std::vector<int>
 
-  //fwd({1, 2, 3});  // error! doesn't compile
+  // fwd({1, 2, 3});  // error! doesn't compile
 
   auto il = {1, 2, 3};  // il's type deduced to be
                         // std::initializer_list<int>

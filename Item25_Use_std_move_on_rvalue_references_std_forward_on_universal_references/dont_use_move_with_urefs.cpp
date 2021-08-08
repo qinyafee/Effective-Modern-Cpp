@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <string>
+#include <typeinfo>
+#include <boost/type_index.hpp>
 
 std::string getWidgetName()       // factory function
 {
@@ -33,6 +35,20 @@ int main()
     auto n = getWidgetName();         // n is local variable
 
     w.setName(n);                     // moves n into w!
+    // std::move(n);
 
     std::cout << n << std::endl;      // n's value now unknown
+
+    using std::cout;
+    using boost::typeindex::type_id_with_cvr;
+
+    // // show T
+    // cout << "T =     "
+    //     << type_id_with_cvr<T>().pretty_name()
+    //     << '\n';
+
+    // show param's type
+    cout << "param = "
+        << type_id_with_cvr<decltype(n)>().pretty_name()
+        << '\n';
 }

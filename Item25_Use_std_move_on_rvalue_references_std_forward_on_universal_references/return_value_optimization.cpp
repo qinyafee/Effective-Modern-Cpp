@@ -38,4 +38,5 @@ Widget makeWidget(Widget w)  // by value parameter of same
   // ...
   
   return w;                  // treat w as rvalue
+  // return std::move(w);    // compiler code
 }

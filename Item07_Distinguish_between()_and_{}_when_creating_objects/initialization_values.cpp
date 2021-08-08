@@ -20,7 +20,7 @@ public:
 
   Widget(int i, bool b) {};    // ctors not declaring
   Widget(int i, double d) {};  // std::initializer_list params
-
+  int t;
 // Default initialization values for non-static data members.
 private:
   int x{0};   // fine, x's default value is 0
@@ -80,7 +80,7 @@ int main()
     Widget w1(10);  // call Widget ctor with argument 10
     //Widget w2();   // most vexing parse! declares a function
                      // named w2 that returns a Widget!
-
+    Widget w2;         //OK
     void f(const Widget& w = Widget());  // w's default value is a
                                          // default-constructed
                                          // Widget

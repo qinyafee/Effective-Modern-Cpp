@@ -16,4 +16,7 @@ int main()
 
   logAndProcess(w);                // call with lvalue
   logAndProcess(std::move(w));     // call with rvalue
+  const Widget rw = w; //error
+  // logAndProcess(std::move(rw)); //error
+  // logAndProcess(rw); //error
 }

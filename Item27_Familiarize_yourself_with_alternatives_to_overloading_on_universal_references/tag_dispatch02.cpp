@@ -23,14 +23,6 @@ void log(const std::chrono::system_clock::time_point& t, const char* s)
   std::cout << "Making log entry" << std::endl;
 }
 
-template<typename T>                             // non-integral
-void logAndAddImpl(T&& name, std::false_type)    // argument:
-{                                                // add it to
-  auto now = std::chrono::system_clock::now();   // global data
-  log(now, "logAndAdd");                         // structure
-  names.emplace(std::forward<T>(name));
-}
-
 template<typename T>
 void logAndAdd(T&& name)
 {
@@ -44,6 +36,14 @@ void logAndAdd(T&& name)
     std::is_integral<typename std::remove_reference<T>::type>()
   );
 
+}
+
+template<typename T>                             // non-integral
+void logAndAddImpl(T&& name, std::false_type)    // argument:
+{                                                // add it to
+  auto now = std::chrono::system_clock::now();   // global data
+  log(now, "logAndAdd");                         // structure
+  names.emplace(std::forward<T>(name));
 }
 
 void logAndAddImpl(int idx, std::true_type)  // integral

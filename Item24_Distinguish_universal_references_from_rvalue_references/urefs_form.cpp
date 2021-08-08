@@ -26,4 +26,8 @@ int main()
     std::vector<int> v;
 //    f(v);                        // error! can't bind lvalue to
                                  // rvalue reference
+    const int x = 0;
+    f(std::move(x));//ok
+    // f(x);  // error! 
+
 }

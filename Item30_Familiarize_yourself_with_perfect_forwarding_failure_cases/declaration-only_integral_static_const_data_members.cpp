@@ -23,7 +23,8 @@ public:
   // ...
 };
 
-const std::size_t Widget::MinVals;   // in Widget's .cpp file
+// const std::size_t Widget::MinVals;   // in Widget's .cpp file // this is defn
+// const std::size_t Widget::MinVals = 28;  // error, duplicate initialization
 
 // ...                                     // no defn. for MinVals
 
@@ -33,5 +34,5 @@ int main()
   widgetData.reserve(Widget::MinVals);       // use of MinVals
 
   f(Widget::MinVals);     // fine, treated as "f(28)"
-  //fwd(Widget::MinVals);   // error! shouldn't link
+  // fwd(Widget::MinVals);   // error! shouldn't link
 }
